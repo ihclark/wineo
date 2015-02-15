@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EAC44CE1A9158BF00E41C2D /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC44CD1A9158BF00E41C2D /* HomeTableViewController.swift */; };
 		99E92B781A914F1400B5ACD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E92B771A914F1400B5ACD7 /* AppDelegate.swift */; };
-		99E92B7A1A914F1400B5ACD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E92B791A914F1400B5ACD7 /* ViewController.swift */; };
 		99E92B7D1A914F1400B5ACD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E92B7B1A914F1400B5ACD7 /* Main.storyboard */; };
 		99E92B7F1A914F1400B5ACD7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E92B7E1A914F1400B5ACD7 /* Images.xcassets */; };
 		99E92B821A914F1400B5ACD7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E92B801A914F1400B5ACD7 /* LaunchScreen.xib */; };
@@ -27,10 +27,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5EAC44CD1A9158BF00E41C2D /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		99E92B721A914F1400B5ACD7 /* wineo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wineo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E92B761A914F1400B5ACD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99E92B771A914F1400B5ACD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99E92B791A914F1400B5ACD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		99E92B7C1A914F1400B5ACD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99E92B7E1A914F1400B5ACD7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		99E92B811A914F1400B5ACD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -82,8 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				99E92B771A914F1400B5ACD7 /* AppDelegate.swift */,
-				99E92B791A914F1400B5ACD7 /* ViewController.swift */,
 				99E92B7B1A914F1400B5ACD7 /* Main.storyboard */,
+				5EAC44CD1A9158BF00E41C2D /* HomeTableViewController.swift */,
 				99E92B7E1A914F1400B5ACD7 /* Images.xcassets */,
 				99E92B801A914F1400B5ACD7 /* LaunchScreen.xib */,
 				99E92B751A914F1400B5ACD7 /* Supporting Files */,
@@ -219,8 +219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EAC44CE1A9158BF00E41C2D /* HomeTableViewController.swift in Sources */,
 				99E92B9A1A914F4200B5ACD7 /* ohai.c in Sources */,
-				99E92B7A1A914F1400B5ACD7 /* ViewController.swift in Sources */,
 				99E92B781A914F1400B5ACD7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +418,7 @@
 				99E92B931A914F1400B5ACD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		99E92B941A914F1400B5ACD7 /* Build configuration list for PBXNativeTarget "wineoTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +427,7 @@
 				99E92B961A914F1400B5ACD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
