@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeTableViewController: UITableViewController {
-    var years: Array<AnyObject> =[]
+    var years: Array<AnyObject> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class HomeTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // self.navigationItem.right    BarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,37 +41,44 @@ class HomeTableViewController: UITableViewController {
         return years.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell {
       
         
         let CellId: String = "cellYear"
         
         var cell: UITableViewCell = tableView?.dequeueReusableCellWithIdentifier(CellId) as UITableViewCell
-        cell.textLabel.text = years[indexPath,?,row]
+       
+        if let ip = indexPath {
+        cell.textLabel.text = years[ip.row] as? String
         
-        
+        }
         return cell
     }
+    
 
-    /*
+    
     // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(tableView: UITableView?, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView?, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath?) {
         if editingStyle == .Delete {
+            if let tv = tableView {
+                
+            years.removeAtIndex(indexPath!.row)
             // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            tv.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+            }
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
