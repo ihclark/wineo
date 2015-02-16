@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4ar-6D-CqA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4ar-6D-CqA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -7,17 +7,18 @@
         <!--Year-->
         <scene sceneID="LV2-sq-bjo">
             <objects>
-                <tableViewController id="jIf-Pg-Xko" sceneMemberID="viewController">
+                <tableViewController id="jIf-Pg-Xko" customClass="HomeTableViewController" customModule="wineo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qNI-25-8kl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellYear" id="DMr-vV-Mch">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellyear" id="DMr-vV-Mch">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DMr-vV-Mch" id="I9j-fG-fwu">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.82667259773800494" green="0.41796218358060899" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -25,11 +26,54 @@
                             <outlet property="delegate" destination="jIf-Pg-Xko" id="wNi-OH-AGW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Year" id="Gmd-FI-7gi"/>
+                    <navigationItem key="navigationItem" title="Year" id="Gmd-FI-7gi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="w4U-tC-mws">
+                            <connections>
+                                <segue destination="6gZ-T2-m8I" kind="push" id="49v-gl-dcC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqC-46-Qn4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1520" y="-58"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tln-TH-boA">
+            <objects>
+                <viewController id="6gZ-T2-m8I" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tc7-oR-2Hg"/>
+                        <viewControllerLayoutGuide type="bottom" id="NZk-Ti-H61"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4BO-PX-zTr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quanity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ucA-Hf-Kpv">
+                                <rect key="frame" x="164" y="169" width="122" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wine Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sLu-TT-8oj">
+                                <rect key="frame" x="164" y="89" width="272" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7vD-dA-8Oh">
+                                <rect key="frame" x="342" y="170" width="94" height="29"/>
+                            </stepper>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uVS-bT-NzL">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oNY-om-7TO"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8qw-N2-hFQ"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="byu-f5-kKW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2224" y="-58"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vXv-bB-vUr">

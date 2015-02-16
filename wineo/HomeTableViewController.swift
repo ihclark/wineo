@@ -9,12 +9,29 @@
 import UIKit
 
 class HomeTableViewController: UITableViewController {
-    var years: Array<AnyObject> = []
+    var years: Array <AnyObject> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        years = ["2015","2016","2017","2018"]
-
+        
+        let flags: NSCalendarUnit = .DayCalendarUnit | .MonthCalendarUnit | .YearCalendarUnit
+        let date = NSDate()
+        let components = NSCalendar.currentCalendar().components(flags, fromDate: date)
+        
+        let year = components.year
+        println(year)
+        let month = components.month
+        println(month)
+        let day = components.day
+        println(day)
+        var yearStr=String(year)
+        years = [yearStr]
+        for var index = 1; index < 20; ++index{
+            var newYear = year + index
+            yearStr=String(newYear)
+            years.append(yearStr)
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,36 +46,41 @@ class HomeTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return years.count
     }
 
-    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell {
+    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?
+        ) -> UITableViewCell {
       
         
-        let CellId: String = "cellYear"
+        let CellId: String = "cellyear"
         
         var cell: UITableViewCell = tableView?.dequeueReusableCellWithIdentifier(CellId) as UITableViewCell
        
-        if let ip = indexPath {
-        cell.textLabel.text = years[ip.row] as? String
-        
+        if let ip = indexPath{
+          cell.textLabel.text = years[ip.row] as? String
         }
+        
+        
+        
+        
+        
         return cell
     }
     
 
     
     // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView?, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(tableView: UITableView?, canEditRowAtIndexPath indexPath: NSIndexPath?) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
