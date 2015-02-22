@@ -10,31 +10,34 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
     var years: Array <AnyObject> = []
-
+    let firstR = 100
+    let firstB = 50
+    let firstG = 80
+    let secondR = 30
+    let secondB = 90
+    let secondG = 140
+    let numberArray = 20
+    var arrayR = [Int]()
+    var arrayB = [Int] ()
+    var arrayG = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let firstR = 100
-        let firstB = 50
-        let firstG = 80
-        let secondR = 30
-        let secondB = 90
-        let secondG = 140
-        let numberArray = 20
-        let difR = (firstR - secondR)/numberArray
-        let difB = (firstB - secondB)/numberArray
-        let difG = (firstG - secondG)/numberArray
-        var arrayR = [firstR]
-        var arrayB = [firstB]
-        var arrayG = [firstG]
         
+        let difR = (secondR - firstR)/numberArray
+        let difB = (secondB - firstB)/numberArray
+        let difG = (secondG - firstG)/numberArray
+        
+        arrayR.append(firstR)
+        arrayB.append(firstB)
+        arrayG.append(firstG)
         
         for var index = 1; index < numberArray-1; ++index{
             var valR = firstR + difR*(index)
             arrayR.append(valR)
             var valB = firstB + difB*(index)
-            arrayR.append(valB)
+            arrayB.append(valB)
             var valG = firstG + difG*(index)
-            arrayR.append(valG)
+            arrayG.append(valG)
         }
         arrayR.append(secondR)
         arrayB.append(secondB)
@@ -92,6 +95,11 @@ class HomeTableViewController: UITableViewController {
        
         if let ip = indexPath{
           cell.textLabel.text = years[ip.row] as? String
+            let r = Int(arrayR[ip.row])
+            let b = Int(arrayB[ip.row])
+            let g = Int(arrayG[ip.row])
+            cell.backgroundColor = UIColorFromRGB(r, gValue: g, bValue: b)
+            
         }
         
         
@@ -151,7 +159,15 @@ class HomeTableViewController: UITableViewController {
     }
     */
 
-    
+    func UIColorFromRGB(rValue: Int, gValue: Int, bValue: Int) -> UIColor {
+        return UIColor(
+            red: CGFloat(rValue) / 255.0,
+            green: CGFloat(gValue) / 255.0,
+            blue: CGFloat(bValue) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+
     
     
 
