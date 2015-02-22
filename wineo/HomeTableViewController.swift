@@ -13,17 +13,40 @@ class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let firstR = 100
+        let firstB = 50
+        let firstG = 80
+        let secondR = 30
+        let secondB = 90
+        let secondG = 140
+        let numberArray = 20
+        let difR = (firstR - secondR)/numberArray
+        let difB = (firstB - secondB)/numberArray
+        let difG = (firstG - secondG)/numberArray
+        var arrayR = [firstR]
+        var arrayB = [firstB]
+        var arrayG = [firstG]
+        
+        
+        for var index = 1; index < numberArray-1; ++index{
+            var valR = firstR + difR*(index)
+            arrayR.append(valR)
+            var valB = firstB + difB*(index)
+            arrayR.append(valB)
+            var valG = firstG + difG*(index)
+            arrayR.append(valG)
+        }
+        arrayR.append(secondR)
+        arrayB.append(secondB)
+        arrayG.append(secondG)
+      
+        
+        println(arrayR)
         
         let flags: NSCalendarUnit = .DayCalendarUnit | .MonthCalendarUnit | .YearCalendarUnit
         let date = NSDate()
         let components = NSCalendar.currentCalendar().components(flags, fromDate: date)
-        
         let year = components.year
-        println(year)
-        let month = components.month
-        println(month)
-        let day = components.day
-        println(day)
         var yearStr=String(year)
         years = [yearStr]
         for var index = 1; index < 20; ++index{
@@ -31,6 +54,7 @@ class HomeTableViewController: UITableViewController {
             yearStr=String(newYear)
             years.append(yearStr)
         }
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -126,5 +150,9 @@ class HomeTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    
+    
+    
 
 }
